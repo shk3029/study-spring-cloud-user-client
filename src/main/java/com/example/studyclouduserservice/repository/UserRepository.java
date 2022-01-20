@@ -1,0 +1,7 @@
+package com.example.studyclouduserservice.repository;
+
+import com.example.studyclouduserservice.entity.UserEntity;
+import org.springframework.data.repository.CrudRepository;
+
+public interface UserRepository extends CrudRepository<UserEntity, Long> {
+}
