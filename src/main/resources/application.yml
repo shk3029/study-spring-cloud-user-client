@@ -31,6 +31,6 @@ logging:
   level:
     com.example.userservice: DEBUG
 
-token:
-  expiration_time: 86400000 # 1일짜리 토큰 (60(s) * 60(m) * 24(h) * 1000(ms))
-  secret: user_token
+#token:
+#  expiration_time: 86400000 # 1일짜리 토큰 (60(s) * 60(m) * 24(h) * 1000(ms))
+#  secret: user_token
