@@ -5,6 +5,7 @@ import com.example.studyclouduserservice.entity.UserEntity;
 import com.example.studyclouduserservice.repository.UserRepository;
 import com.example.studyclouduserservice.vo.ResponseOrder;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.security.core.userdetails.User;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
@@ -59,6 +61,11 @@ public class UserServiceImpl implements UserService {
         UserDto userDto = new ModelMapper().map(userEntity, UserDto.class);
 
         List<ResponseOrder> orders = new ArrayList<>();
+
+        log.info("Before call orders microservice");
+
+        log.info("After called orders microservice");
+
         userDto.setOrders(orders);
 
         return userDto;
